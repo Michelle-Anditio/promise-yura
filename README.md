@@ -11,7 +11,7 @@
   [![Gemini API](https://img.shields.io/badge/Gemini_AI-8E75C2?style=for-the-badge&logo=googlegemini&logoColor=white)][Gemini-url]
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)][Tailwind-url]
 
-  [Explore Live Demo](https://ais-dev-voz5mgocxj2ljz2mhlb4me-49127804258.asia-east1.run.app) • [Report a Bug](https://github.com/michelleanditio/promise-yura/issues/new?labels=bug) • [Request a Feature](https://github.com/michelleanditio/promise-yura/issues/new?labels=enhancement)
+  [Explore Live Demo](https://ais-dev-voz5mgocxj2ljz2mhlb4me-49127804258.asia-east1.run.app) • [Report a Bug](https://github.com/Michelle-Anditio/promise-yura/issues/new?labels=bug) • [Request a Feature](https://github.com/Michelle-Anditio/promise-yura/issues/new?labels=enhancement)
 </div>
 
 ---
