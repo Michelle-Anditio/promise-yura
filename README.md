@@ -43,13 +43,32 @@ Unlike traditional static todo lists, Promise Yura replaces rigid inputs with di
 
 ## 🔄 How It Works
 
-```
-[Raw Voiced Thought] ➔ [Gemini Intelligent Clean] ➔ [Structured Action Parameters] ➔ [Yura Response Animation]
-"mager banget tgl 30 jam 5      (Filler filter; parsing title,      Title: Submit Report             (Sleepy Mascot wakes up
-sore submit report ya, tolong"    date, time & priority)           Due: 2026-05-30 @ 17:00          with a wink of approval!)
-```
+### 🎤 1. Raw Voice Input
 
----
+> "I'm so lazy... remind me to submit the report on the 30th at 5 PM."
+
+↓
+
+### 🧠 2. Gemini AI Processing
+
+* Removes filler words
+* Detects task intent
+* Extracts date and time
+* Determines reminder priority
+
+↓
+
+### 📋 3. Structured Task
+
+**Title:** Submit Report
+**Due:** May 30, 2026 • 5:00 PM
+
+↓
+
+### 🐶 4. Yura Response
+
+Yura confirms the promise, schedules the reminder, and prepares future notifications.
+
 
 ## ✨ Interactive Feature Matrix
 
@@ -188,7 +207,7 @@ Promise Yura is licensed as an open source project available to scholars, develo
 ## 📮 Contact
 
 * **Developer Email**: michelle.anditio6@gmail.com
-* **Project Webpage**: [GitHub - michelleanditio/promise-yura](https://github.com/michelleanditio/promise-yura)
+* **Project Webpage**: [GitHub - Michelle-Anditio/promise-yura](https://github.com/Michelle-Anditio/promise-yura)
 * **Application Live Demo**: [Interactive Platform Link](https://ais-dev-voz5mgocxj2ljz2mhlb4me-49127804258.asia-east1.run.app)
 
 ---
