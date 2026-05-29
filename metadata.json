@@ -1,0 +1,6 @@
+{
+  "name": "Promise Yura",
+  "description": "Voice-first promise companion that helps users capture scattered thoughts, organize commitments, and gently follow through with mascot Yura.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

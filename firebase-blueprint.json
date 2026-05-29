@@ -1,0 +1,105 @@
+{
+  "entities": {
+    "PromiseItem": {
+      "title": "PromiseItem",
+      "description": "A single commitment or promise tracked by Yura",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier of the promise"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title or action of the promise"
+        },
+        "dateStr": {
+          "type": "string",
+          "description": "Readable target date or expression"
+        },
+        "timeStr": {
+          "type": "string",
+          "description": "Readable target time, empty if details needed"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["Low", "Medium", "High"],
+          "description": "Priority level of the promise"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["upcoming", "needs check-in", "needs detail", "done", "missed"],
+          "description": "Current status of commitment"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Additional context or notes"
+        },
+        "category": {
+          "type": "string",
+          "description": "Category label of this commitment"
+        },
+        "intensity": {
+          "type": "string",
+          "enum": ["Gentle", "Normal", "Annoying"],
+          "description": "Intensity of notifications and nudges"
+        }
+      },
+      "required": ["id", "title", "dateStr", "timeStr", "priority", "status"]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Profile information of a user",
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": "string",
+          "description": "Custom display name chosen by the user"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp when the profile was last updated"
+        }
+      },
+      "required": ["displayName"]
+    },
+    "FcmToken": {
+      "title": "FcmToken",
+      "description": "FCM device token registered for the user",
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string",
+          "description": "FCM registration token"
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "ISO timestamp when the token was registered"
+        },
+        "lastSeenAt": {
+          "type": "string",
+          "description": "ISO timestamp of last activity check"
+        },
+        "userAgent": {
+          "type": "string",
+          "description": "Browser user agent registering the token"
+        }
+      },
+      "required": ["token", "createdAt", "lastSeenAt", "userAgent"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile metadata documents"
+    },
+    "/users/{userId}/promises/{promiseId}": {
+      "schema": "PromiseItem",
+      "description": "Collection of promises tracked for a specific authenticated user"
+    },
+    "/users/{userId}/fcmTokens/{token}": {
+      "schema": "FcmToken",
+      "description": "Firebase Cloud Messaging push tokens registered for the active user devices"
+    }
+  }
+}
