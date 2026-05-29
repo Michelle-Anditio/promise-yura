@@ -11,7 +11,7 @@
   [![Gemini API](https://img.shields.io/badge/Gemini_AI-8E75C2?style=for-the-badge&logo=googlegemini&logoColor=white)][Gemini-url]
   [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)][Tailwind-url]
 
-  [Explore Live Demo](https://ais-dev-voz5mgocxj2ljz2mhlb4me-49127804258.asia-east1.run.app) • [Report a Bug](https://github.com/Michelle-Anditio/promise-yura/issues/new?labels=bug) • [Request a Feature](https://github.com/Michelle-Anditio/promise-yura/issues/new?labels=enhancement)
+  [Explore Live Demo](https://ais-dev-voz5mgocxj2ljz2mhlb4me-49127804258.asia-east1.run.app) • [Report a Bug](https://github.com/michelleanditio/promise-yura/issues/new?labels=bug) • [Request a Feature](https://github.com/michelleanditio/promise-yura/issues/new?labels=enhancement)
 </div>
 
 ---
@@ -35,40 +35,21 @@
 
 > **"Often in our fast-paced daily routines, commitments are made spontaneously or left fragmented in unstructured raw thoughts. Promise Yura bridges this gap with responsive AI."**
 
-**Promise Yura** is an eye-catching, responsive AI-powered reminder assistant designed to transform messy thoughts into clear, actionable promises. Built using **React (v19)**, **Vite**, **Tailwind CSS**, and **Framer Motion**, the application features **Yura** — a gentle floating cloud companion who reacts with dynamic expressions based on your voice activity, system status, and promise journey, making productivity feel more natural, personal, and enjoyable.
+**Promise Yura** is an eye-catching, responsive digital assistant and voice companion designed for recruiters, judges, and productivity enthusiasts alike. Built using **React (v19)**, **Vite**, **Tailwind CSS**, and **Framer Motion**, the application features **Yura**—an animated dog companion who reacts with dynamic expressions based on your microphone volume, database status, and promise lists.
 
-Unlike traditional static todo lists, Promise Yura replaces rigid inputs with natural voice-based task creation. Using Google Gemini and Firebase, it interprets conversational speech, extracts actionable task details, identifies priorities, and keeps reminders synchronized across devices.
+Unlike traditional static todo lists, Promise Yura replaces rigid inputs with direct **natural speech**. By leveraging the official `@google/genai` TypeScript SDK and Firebase services, it accurately cleans bilingual filler words, extracts action parameters, categorizes critical priorities, and synchronizes your promises instantly across mobile and desktop environments.
 
 ---
 
 ## 🔄 How It Works
 
-### 🎤 1. Raw Voice Input
+```
+[Raw Voiced Thought] ➔ [Gemini Intelligent Clean] ➔ [Structured Action Parameters] ➔ [Yura Response Animation]
+"mager banget tgl 30 jam 5      (Filler filter; parsing title,      Title: Submit Report             (Sleepy Mascot wakes up
+sore submit report ya, tolong"    date, time & priority)           Due: 2026-05-30 @ 17:00          with a wink of approval!)
+```
 
-> "I'm so lazy... remind me to submit the report on the 30th at 5 PM."
-
-↓
-
-### 🧠 2. Gemini AI Processing
-
-* Removes filler words
-* Detects task intent
-* Extracts date and time
-* Determines reminder priority
-
-↓
-
-### 📋 3. Structured Task
-
-**Title:** Submit Report
-**Due:** May 30, 2026 • 5:00 PM
-
-↓
-
-### 🐶 4. Yura Response
-
-Yura confirms the promise, schedules the reminder, and prepares future notifications.
-
+---
 
 ## ✨ Interactive Feature Matrix
 
@@ -207,7 +188,7 @@ Promise Yura is licensed as an open source project available to scholars, develo
 ## 📮 Contact
 
 * **Developer Email**: michelle.anditio6@gmail.com
-* **Project Webpage**: [GitHub - Michelle-Anditio/promise-yura](https://github.com/Michelle-Anditio/promise-yura)
+* **Project Webpage**: [GitHub - michelleanditio/promise-yura](https://github.com/michelleanditio/promise-yura)
 * **Application Live Demo**: [Interactive Platform Link](https://ais-dev-voz5mgocxj2ljz2mhlb4me-49127804258.asia-east1.run.app)
 
 ---

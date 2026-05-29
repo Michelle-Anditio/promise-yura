@@ -1444,6 +1444,8 @@ export default function App() {
 
         {currentScreen === "Home" && (
           <HomeScreen
+            promises={promises}
+            userName={currentSession?.displayName}
             onStartCatch={handleStartCatchProcedure}
             onTypeThought={handleTypeInstead}
             onChangeTab={(tab) => {

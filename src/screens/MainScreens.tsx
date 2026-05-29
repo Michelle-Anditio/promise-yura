@@ -16,18 +16,31 @@ import { PromiseItem, UserPreferences } from "../types";
 // 1. HOME SCREEN
 // ============================================================================
 interface HomeScreenProps {
+  promises: PromiseItem[];
   onStartCatch: () => void;
   onTypeThought: () => void;
   onChangeTab: (tab: string) => void;
   showToast: (msg: string) => void;
+  userName?: string;
 }
 
 export const HomeScreen: React.FC<HomeScreenProps> = ({
+  promises,
   onStartCatch,
   onTypeThought,
   onChangeTab,
   showToast,
+  userName,
 }) => {
+    const activePromises = promises.filter((p) => p.status !== "done" && p.status !== "missed");
+    const upcomingPromise = activePromises
+      .filter((p) => p.dueAt)
+      .sort((a, b) => new Date(a.dueAt!).getTime() - new Date(b.dueAt!).getTime())[0];
+
+    const firstName = userName && userName.trim().toLowerCase() !== "user" && userName.trim() !== ""
+      ? userName.trim().split(/\s+/)[0]
+      : "";
+
   return (
     <motion.div
       key="Home"
@@ -50,55 +63,121 @@ export const HomeScreen: React.FC<HomeScreenProps> = ({
         }}
       >
         <div className="space-y-6 flex flex-col items-center justify-center min-h-[calc(100vh-210px)] max-w-md mx-auto">
-          <div className="text-center space-y-2 select-none">
-            <h1 className="text-3xl font-extrabold text-primary">No promises yet</h1>
-            <p className="text-[#484551] font-semibold text-sm">Tell Yura what’s on your mind.</p>
-          </div>
+          {activePromises.length === 0 ? (
+            <>
+              <div className="text-center space-y-2 select-none">
+                <h1 className="text-3xl font-extrabold text-primary">No promises yet</h1>
+                <p className="text-[#484551] font-semibold text-sm">Tell Yura what’s on your mind.</p>
+              </div>
 
-          {/* Central Focus Zone Mascot illustration */}
-          <div className="w-full py-2">
-            <Card className="glass-card rounded-3xl p-6 text-center shadow-[0_20px_40px_rgba(95,82,166,0.08)] flex flex-col items-center border border-white/40">
-              <YuraMascot mood="question" size="lg" className="mb-4" />
-              <h2 className="text-sm font-extrabold text-[#1b1c17] mb-1">
-                Your promise list is empty.
-              </h2>
-              <p className="text-xs font-medium leading-relaxed text-[#797582] max-w-[280px] text-center select-none px-2">
-                Tap the mic and say anything messy
-                <span className="block text-[#5f52a6] font-extrabold mt-1">
-                  Yura will organize it.
-                </span>
-              </p>
-            </Card>
-          </div>
+              {/* Central Focus Zone Mascot illustration */}
+              <div className="w-full py-2">
+                <Card className="glass-card rounded-3xl p-6 text-center shadow-[0_20px_40px_rgba(95,82,166,0.08)] flex flex-col items-center border border-white/40">
+                  <YuraMascot mood="question" size="lg" className="mb-4" />
+                  <h2 className="text-sm font-extrabold text-[#1b1c17] mb-1">
+                    Your promise list is empty.
+                  </h2>
+                  <p className="text-xs font-medium leading-relaxed text-[#797582] max-w-[280px] text-center select-none px-2">
+                    Tap the mic and say anything messy
+                    <span className="block text-[#5f52a6] font-extrabold mt-1">
+                      Yura will organize it.
+                    </span>
+                  </p>
+                </Card>
+              </div>
 
-          {/* Light prompt suggestions helper chip */}
-          <div className="w-full bg-white rounded-2xl p-4 flex items-start gap-3 border border-[#D8CCFF] soft-shadow select-none">
-            <Lightbulb className="text-[#356477] w-5 h-5 mt-0.5 flex-shrink-0" />
-            <p className="text-xs text-on-surface-variant font-medium leading-relaxed italic">
-              Try stating: <span className="text-on-surface font-semibold">"Remind me to pay rent tomorrow and message my lecturer later"</span>
-            </p>
-          </div>
+              {/* Light prompt suggestions helper chip */}
+              <div className="w-full bg-white rounded-2xl p-4 flex items-start gap-3 border border-[#D8CCFF] soft-shadow select-none">
+                <Lightbulb className="text-[#356477] w-5 h-5 mt-0.5 flex-shrink-0" />
+                <p className="text-xs text-on-surface-variant font-medium leading-relaxed italic">
+                  Try stating: <span className="text-on-surface font-semibold">"Remind me to pay rent tomorrow and message my lecturer later"</span>
+                </p>
+              </div>
 
-          {/* Trigger Buttons */}
-          <div className="w-full space-y-3.5 pt-4">
-            <Button
-              onClick={onStartCatch}
-              variant="primary"
-              className="w-full text-base py-5 h-16 flex items-center justify-center gap-2 shadow-lg shadow-primary/20 font-bold"
-              leftIcon={<Mic className="text-white w-5 h-5 font-bold" />}
-            >
-              Catch a promise
-            </Button>
-            
-            <div className="text-center select-none space-y-1">
-              <button
-                onClick={onTypeThought}
-                className="text-sm font-bold text-primary py-2 px-4 hover:bg-primary-fixed/30 rounded-full transition-colors select-none cursor-pointer"
-              >
-                Type instead
-              </button>
-            </div>
-          </div>
+              {/* Trigger Buttons */}
+              <div className="w-full space-y-3.5 pt-4">
+                <Button
+                  onClick={onStartCatch}
+                  variant="primary"
+                  className="w-full text-base py-5 h-16 flex items-center justify-center gap-2 shadow-lg shadow-primary/20 font-bold"
+                  leftIcon={<Mic className="text-white w-5 h-5 font-bold" />}
+                >
+                  Catch a promise
+                </Button>
+                
+                <div className="text-center select-none space-y-1">
+                  <button
+                    onClick={onTypeThought}
+                    className="text-sm font-bold text-primary py-2 px-4 hover:bg-primary-fixed/30 rounded-full transition-colors select-none cursor-pointer"
+                  >
+                    Type instead
+                  </button>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="text-center space-y-1.5 select-none">
+                <h1 className="text-3xl font-extrabold text-primary">
+                  {firstName ? `Hey, ${firstName} 👋` : "Hey there 👋"}
+                </h1>
+                <p className="text-[#484551] font-semibold text-sm">
+                  You have {activePromises.length} active {activePromises.length === 1 ? "promise" : "promises"} today.
+                </p>
+              </div>
+
+              {/* Clean Active Promises Core Commitment Card with Companion Mascot */}
+              <div className="w-full py-2">
+                <Card className="glass-card rounded-3xl p-6 shadow-[0_20px_40px_rgba(95,82,166,0.08)] flex flex-col items-center border border-white/40">
+                  <img
+                    src="/yura-ganbatte.png"
+                    alt="Yura Companion"
+                    className="w-24 h-24 mb-2 object-contain select-none"
+                    referrerPolicy="no-referrer"
+                  />
+                  
+                  <div className="w-full space-y-4">
+                    <div className="space-y-1 bg-primary/5 p-4 rounded-2xl border border-primary/10 select-none text-center">
+                      <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#797582] block mb-1">
+                        Next Up
+                      </span>
+                      {upcomingPromise ? (
+                        <div className="space-y-1">
+                          <p className="text-sm font-black text-[#1b1c17] line-clamp-2 px-2">
+                            {upcomingPromise.title}
+                          </p>
+                          <p className="text-xs font-semibold text-primary flex items-center justify-center gap-1.5 mt-1">
+                            <Calendar className="w-3.5 h-3.5 text-primary" />
+                            <span>{upcomingPromise.dateStr || "Today"}</span>
+                            {upcomingPromise.timeStr && (
+                              <>
+                                <span className="mx-1">•</span>
+                                <Clock className="w-3.5 h-3.5 text-primary" />
+                                <span>{upcomingPromise.timeStr}</span>
+                              </>
+                            )}
+                          </p>
+                        </div>
+                      ) : (
+                        <p className="text-xs font-bold text-[#797582]">
+                          No upcoming deadline details listed.
+                        </p>
+                      )}
+                    </div>
+                    
+                    <Button
+                      onClick={() => onChangeTab("promises")}
+                      variant="primary"
+                      className="w-full text-sm py-3 font-extrabold"
+                      rightIcon={<ChevronRight className="w-4 h-4 text-white" />}
+                    >
+                      View My Promises
+                    </Button>
+                  </div>
+                </Card>
+              </div>
+            </>
+          )}
         </div>
       </ScreenLayout>
     </motion.div>
