@@ -2,14 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
+// Your web app's Firebase configuration loaded from environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyDBfZFKthzyQw1NLeQRwUHpmwc1E42BTdo",
-  authDomain: "yura-remindme.firebaseapp.com",
-  projectId: "yura-remindme",
-  storageBucket: "yura-remindme.firebasestorage.app",
-  messagingSenderId: "449886223489",
-  appId: "1:449886223489:web:fd62bded64502aea0c2180"
+  apiKey: (import.meta as any).env?.VITE_FIREBASE_API_KEY || "",
+  authDomain: (import.meta as any).env?.VITE_FIREBASE_AUTH_DOMAIN || "",
+  projectId: (import.meta as any).env?.VITE_FIREBASE_PROJECT_ID || "",
+  storageBucket: (import.meta as any).env?.VITE_FIREBASE_STORAGE_BUCKET || "",
+  messagingSenderId: (import.meta as any).env?.VITE_FIREBASE_MESSAGING_SENDER_ID || "",
+  appId: (import.meta as any).env?.VITE_FIREBASE_APP_ID || ""
 };
 
 // Initialize Firebase
