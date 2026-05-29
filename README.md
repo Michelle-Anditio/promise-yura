@@ -35,7 +35,7 @@
 
 > **"Often in our fast-paced daily routines, commitments are made spontaneously or left fragmented in unstructured raw thoughts. Promise Yura bridges this gap with responsive AI."**
 
-**Promise Yura** is an eye-catching, responsive digital assistant and voice companion designed for recruiters, judges, and productivity enthusiasts alike. Built using **React (v19)**, **Vite**, **Tailwind CSS**, and **Framer Motion**, the application features **Yura**—an animated dog companion who reacts with dynamic expressions based on your microphone volume, database status, and promise lists.
+**Promise Yura** is an eye-catching, responsive AI-powered reminder assistant designed to transform messy thoughts into clear, actionable promises. Built using **React (v19)**, **Vite**, **Tailwind CSS**, and **Framer Motion**, the application features **Yura** — a gentle floating cloud companion who reacts with dynamic expressions based on your voice activity, system status, and promise journey, making productivity feel more natural, personal, and enjoyable.
 
 Unlike traditional static todo lists, Promise Yura replaces rigid inputs with direct **natural speech**. By leveraging the official `@google/genai` TypeScript SDK and Firebase services, it accurately cleans bilingual filler words, extracts action parameters, categorizes critical priorities, and synchronizes your promises instantly across mobile and desktop environments.
 
