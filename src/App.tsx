@@ -876,6 +876,8 @@ export default function App() {
       });
       
       // Clear sensitive inputs and error states on successful logout
+      setAuthEmail("");
+      setAuthName("");
       setAuthPassword("");
       setAuthError("");
       

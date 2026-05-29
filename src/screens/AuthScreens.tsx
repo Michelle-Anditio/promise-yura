@@ -42,6 +42,12 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
 }) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
+  React.useEffect(() => {
+    setAuthEmail("");
+    setAuthPassword("");
+    setAuthError("");
+  }, [setAuthEmail, setAuthPassword, setAuthError]);
+
   const handleEmailLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!authEmail || !authPassword) {
