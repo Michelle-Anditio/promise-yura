@@ -189,7 +189,7 @@ Promise Yura is licensed as an open source project available to scholars, develo
 
 * **Developer Email**: michelle.anditio6@gmail.com
 * **Project Webpage**: [GitHub - michelleanditio/promise-yura](https://github.com/michelleanditio/promise-yura)
-* **Application Live Demo**: [Interactive Platform Link](https://ais-dev-voz5mgocxj2ljz2mhlb4me-49127804258.asia-east1.run.app)
+* **Application Live Demo**: [Interactive Platform Link](https://promise-yura.vercel.app)
 
 ---
 
