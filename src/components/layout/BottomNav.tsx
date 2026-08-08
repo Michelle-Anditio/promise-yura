@@ -11,7 +11,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
   onChangeTab,
 }) => {
   return (
-    <nav className="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-surface-container-low/95 backdrop-blur-xl rounded-t-2xl shadow-[0_-10px_30px_rgba(95,82,166,0.06)] border-t border-surface-container-high/40 select-none">
+    <nav className="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-white/92 backdrop-blur-xl rounded-t-2xl shadow-[0_-10px_30px_rgba(95,82,166,0.06)] border-t border-[#e8e2ff]/60 select-none">
       <button
         onClick={() => onChangeTab("home")}
         className={`flex flex-col items-center justify-center p-2 rounded-full transition-all duration-300 w-16 cursor-pointer ${

@@ -20,7 +20,7 @@ export const Header: React.FC<HeaderProps> = ({
   onSkip,
 }) => {
   return (
-    <header className="sticky top-0 left-0 w-full z-10 bg-background/80 backdrop-blur-xl border-b border-surface-container/30">
+    <header className="sticky top-0 left-0 w-full z-10 bg-white/85 backdrop-blur-xl border-b border-[#e8e2ff]/60 shadow-[0_2px_12px_rgba(95,82,166,0.03)]">
       <div className="flex justify-between items-center px-6 h-16 w-full max-w-lg mx-auto">
         <div className="flex items-center gap-3">
           {onBack ? (

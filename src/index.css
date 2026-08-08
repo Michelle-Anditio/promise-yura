@@ -34,18 +34,18 @@
   --color-on-tertiary-fixed: #001f29;
   --color-on-tertiary-fixed-variant: #194c5e;
   
-  --color-background: #fcfbff;
+  --color-background: #ffffff;
   --color-on-background: #151612;
   
   --color-surface: #ffffff;
-  --color-surface-dim: #dfdad0;
+  --color-surface-dim: #f5f2fa;
   --color-surface-bright: #ffffff;
-  --color-surface-variant: #eae6f4;
+  --color-surface-variant: #f2eef8;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f9f8ff;
-  --color-surface-container: #f5f3fa;
-  --color-surface-container-high: #eae5f5;
-  --color-surface-container-highest: #dbd6e8;
+  --color-surface-container-low: #fbf9ff;
+  --color-surface-container: #f7f4fc;
+  --color-surface-container-high: #f1ecf9;
+  --color-surface-container-highest: #e6e0f3;
   --color-on-surface: #191624;
   --color-on-surface-variant: #494554;
   
@@ -65,7 +65,10 @@ html, body, #root {
 }
 
 body {
-  background-color: #fcfbff;
+  background-color: #ffffff;
+  background-image: radial-gradient(at 50% 0%, rgba(245, 240, 255, 0.7) 0px, transparent 75%),
+                    radial-gradient(at 100% 100%, rgba(254, 242, 248, 0.5) 0px, transparent 65%);
+  background-attachment: fixed;
   color: #151612;
   font-family: "Nunito", sans-serif;
 }
@@ -82,14 +85,15 @@ h1, h2, h3, h4, h5, h6, .font-display {
 
 /* Glassmorphism custom design system shadow & cards */
 .glass-card {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(252, 250, 255, 0.92));
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid #D8CCFF;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(216, 204, 255, 0.55);
+  box-shadow: 0 10px 30px -8px rgba(95, 82, 166, 0.07);
 }
 
 .soft-shadow {
-  box-shadow: 0 10px 25px -5px rgba(110, 90, 210, 0.1), 0 4px 10px -3px rgba(110, 90, 210, 0.05);
+  box-shadow: 0 10px 25px -5px rgba(110, 90, 210, 0.07), 0 4px 10px -3px rgba(110, 90, 210, 0.03);
 }
 
 .ambient-glow {

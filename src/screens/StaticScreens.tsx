@@ -17,7 +17,7 @@ export const StartupSplashScreen: React.FC = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 h-[100dvh] max-h-[100dvh] z-50 flex flex-col items-center justify-center text-center p-6 md:p-8 bg-neutral-background relative overflow-hidden"
+      className="fixed inset-0 h-[100dvh] max-h-[100dvh] z-50 flex flex-col items-center justify-center text-center p-6 md:p-8 bg-gradient-to-b from-white via-[#fbfaff] to-[#f5f2ff] relative overflow-hidden"
     >
       {/* Ambient Background blur glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
@@ -51,7 +51,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onGetStarted }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 h-[100dvh] max-h-[100dvh] z-50 flex flex-col items-center justify-between text-center p-6 md:p-8 bg-neutral-background relative overflow-hidden"
+      className="fixed inset-0 h-[100dvh] max-h-[100dvh] z-50 flex flex-col items-center justify-between text-center p-6 md:p-8 bg-gradient-to-b from-white via-[#fbfaff] to-[#f5f2ff] relative overflow-hidden"
     >
       {/* Ambient Background blur glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 animate-none">

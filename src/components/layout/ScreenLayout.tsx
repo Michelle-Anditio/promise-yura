@@ -30,17 +30,18 @@ export const ScreenLayout: React.FC<ScreenLayoutProps> = ({
   fullScreen = false,
 }) => {
   return (
-    <div className={`relative flex flex-col bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container ${
+    <div className={`relative flex flex-col bg-gradient-to-b from-white via-[#fbfaff] to-[#f6f3ff] text-on-background selection:bg-primary-container selection:text-on-primary-container ${
       fullScreen
         ? "h-[100dvh] max-h-[100dvh] overflow-hidden"
         : `min-h-[100dvh] ${bottomNavProps ? "pb-32" : "pb-6"}`
     }`}>
-      {/* Soft Glow Background Blobs */}
+      {/* Soft Luminous Background Glows */}
       {pulseGlow && (
         <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10 animate-none">
-          <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary-container/15 rounded-full blur-[80px] animate-pulse duration-10000" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary-container/15 rounded-full blur-[100px] animate-pulse duration-10000 delay-2000" />
-          <div className="absolute top-1/2 right-[10%] w-60 h-60 bg-tertiary-container/10 rounded-full blur-[90px] animate-pulse duration-8000 delay-4000" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-96 bg-gradient-to-b from-purple-100/40 via-purple-50/20 to-transparent blur-[60px]" />
+          <div className="absolute top-1/4 -left-20 w-80 h-80 bg-[#ede7ff]/40 rounded-full blur-[100px] animate-pulse duration-10000" />
+          <div className="absolute bottom-1/3 -right-20 w-80 h-80 bg-[#ffdce7]/30 rounded-full blur-[110px] animate-pulse duration-10000 delay-2000" />
+          <div className="absolute top-2/3 left-10 w-64 h-64 bg-[#e0f2fe]/30 rounded-full blur-[100px] animate-pulse duration-8000 delay-4000" />
         </div>
       )}
 
